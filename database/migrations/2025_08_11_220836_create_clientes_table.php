@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();
+            $table->enum('tipo', ['propietario','comprador','arrendatario'])->default('comprador');
+            $table->text('notas')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

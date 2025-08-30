@@ -17,6 +17,8 @@ class Cliente extends Model
         'phone',
         'email',
         'address',
+        'tipo',
+        'notas',
     ];
 
     public function organizacion()
@@ -26,5 +28,15 @@ class Cliente extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function propiedades()
+    {
+        return $this->hasMany(Propiedad::class, 'cliente_id'); // como propietario
+    }
+
+    public function intereses()
+    {
+        return $this->hasMany(PropiedadCliente::class); // como interesado
     }
 }
