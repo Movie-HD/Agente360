@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PropiedadCliente extends Model
 {
-    protected $fillable = ['propiedad_id', 'cliente_id', 'nivel_interes', 'estado_contacto'];
+    protected $fillable = ['organizacion_id', 'propiedad_id', 'cliente_id', 'nivel_interes', 'estado_contacto'];
 
     public function propiedad()
     {
@@ -22,4 +22,8 @@ class PropiedadCliente extends Model
     {
         return $this->hasMany(Cita::class);
     }
+    public function organizacion()
+{
+    return $this->belongsTo(Organizacion::class);
+}
 }

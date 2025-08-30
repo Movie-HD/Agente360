@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('propiedad_clientes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('organizacion_id')->constrained()->cascadeOnDelete();
             $table->foreignId('propiedad_id')->constrained('propiedades')->cascadeOnDelete();
             $table->foreignId('cliente_id')->constrained()->cascadeOnDelete();
             $table->enum('nivel_interes', ['alto', 'medio', 'bajo'])->nullable();
