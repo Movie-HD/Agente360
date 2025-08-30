@@ -59,4 +59,9 @@ class Propiedad extends Model
     {
         return $this->hasMany(PropiedadCliente::class);
     }
+
+    public function propiedadClientes()
+    {
+        return $this->hasMany(PropiedadCliente::class);
+    }
 }

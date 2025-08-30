@@ -37,7 +37,7 @@ class PropiedadResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            'interesados' => \App\Filament\Resources\Propiedads\RelationManagers\InteresadosRelationManager::class
         ];
     }
 
