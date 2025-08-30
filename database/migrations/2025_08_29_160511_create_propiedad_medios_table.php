@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('propiedad_medios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('propiedad_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('propiedad_id')->constrained('propiedades')->cascadeOnDelete();
             $table->string('medio'); // OLX, Facebook, etc.
             $table->string('link')->nullable();
             $table->date('fecha_publicacion')->nullable();

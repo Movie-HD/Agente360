@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('propiedad_agentes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('propiedad_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('propiedad_id')->constrained('propiedades')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // agente invitado
             $table->decimal('porcentaje_comision', 5, 2)->nullable(); // 50.00 = 50%
             $table->enum('tipo', ['invitado', 'compartido'])->default('invitado');
