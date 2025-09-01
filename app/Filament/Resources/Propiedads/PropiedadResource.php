@@ -22,6 +22,11 @@ class PropiedadResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $navigationLabel = 'Propiedades';
+
+    protected static ?string $modelLabel = 'Propiedad';
+    protected static ?string $pluralModelLabel = 'Propiedades';
+
     protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
@@ -37,7 +42,8 @@ class PropiedadResource extends Resource
     public static function getRelations(): array
     {
         return [
-            'interesados' => \App\Filament\Resources\Propiedads\RelationManagers\InteresadosRelationManager::class
+            'interesados' => \App\Filament\Resources\Propiedads\RelationManagers\InteresadosRelationManager::class,
+            'medios' => \App\Filament\Resources\Propiedads\RelationManagers\MediosRelationManager::class,
         ];
     }
 
