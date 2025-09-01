@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cita extends Model
 {
-    protected $fillable = ['propiedad_cliente_id', 'user_id', 'fecha_hora', 'estado', 'feedback'];
+    protected $fillable = ['organizacion_id', 'propiedad_cliente_id', 'user_id', 'fecha_hora', 'estado', 'feedback'];
 
     public function propiedadCliente()
     {
@@ -16,5 +16,9 @@ class Cita extends Model
     public function agente()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    public function organizacion()
+    {
+        return $this->belongsTo(Organizacion::class);
     }
 }
