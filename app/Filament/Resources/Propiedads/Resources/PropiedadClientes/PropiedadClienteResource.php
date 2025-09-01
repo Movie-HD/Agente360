@@ -22,6 +22,9 @@ class PropiedadClienteResource extends Resource
 
     protected static ?string $parentResource = PropiedadResource::class;
 
+    protected static ?string $modelLabel = 'Cliente Interesado';
+    protected static ?string $pluralModelLabel = 'Clientes Interesados';
+
     public static function form(Schema $schema): Schema
     {
         return PropiedadClienteForm::configure($schema);
@@ -35,7 +38,7 @@ class PropiedadClienteResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            'citas' => \App\Filament\Resources\Propiedads\RelationManagers\InteresadosCitasRelationManager::class
         ];
     }
 

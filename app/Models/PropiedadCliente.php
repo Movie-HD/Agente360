@@ -23,7 +23,11 @@ class PropiedadCliente extends Model
         return $this->hasMany(Cita::class);
     }
     public function organizacion()
-{
-    return $this->belongsTo(Organizacion::class);
-}
+    {
+        return $this->belongsTo(Organizacion::class);
+    }
+    public function interesadosCitas()
+    {
+        return $this->hasMany(Cita::class);
+    }
 }
