@@ -44,6 +44,7 @@ class PropiedadResource extends Resource
         return [
             'interesados' => \App\Filament\Resources\Propiedads\RelationManagers\InteresadosRelationManager::class,
             'medios' => \App\Filament\Resources\Propiedads\RelationManagers\MediosRelationManager::class,
+            'agentes' => \App\Filament\Resources\Propiedads\RelationManagers\AgentesRelationManager::class,
         ];
     }
 
