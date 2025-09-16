@@ -9,7 +9,7 @@
         "php": "^8.2",
         "bezhansalleh/filament-shield": "^4.0@beta",
         "filament/filament": "^4.0",
-        "laravel/framework": "^11.31",
+        "laravel/framework": "^12.0",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
@@ -39,7 +39,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
             "@php artisan filament:upgrade",
-            "php -r \"file_exists('patches/CreateRole.php') && copy('patches/CreateRole.php', 'vendor/bezhansalleh/filament-shield/src/Resources/RoleResource/Pages/CreateRole.php');\"",
+            "php -r \"file_exists('patches/HasNavigation.php') && copy('patches/HasNavigation.php', 'vendor/bezhansalleh/filament-plugin-essentials/src/Concerns/Plugin/HasNavigation.php');\"",
             "php -r \"file_exists('patches/RoleResource.php') && copy('patches/RoleResource.php', 'vendor/bezhansalleh/filament-shield/src/Resources/RoleResource.php');\""
         ],
         "post-update-cmd": [
