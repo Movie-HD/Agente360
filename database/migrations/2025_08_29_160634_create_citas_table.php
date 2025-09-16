@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('organizacion_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('propiedad_cliente_id')->constrained('propiedad_clientes')->cascadeOnDelete();
+            $table->foreignId('propiedad_cliente_id')->nullable()->constrained('propiedad_clientes')->cascadeOnDelete();
+            $table->foreignId('cliente_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('propiedad_id')->nullable()->constrained('propiedades')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // agente asignado
             $table->dateTime('fecha_hora');
             $table->enum('estado', ['pendiente', 'realizada', 'cancelada', 'reprogramada'])->default('pendiente');

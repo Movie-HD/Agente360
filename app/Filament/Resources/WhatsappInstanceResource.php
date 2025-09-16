@@ -67,8 +67,7 @@ class WhatsappInstanceResource extends Resource
                     }),
 
                 View::make('filament.components.qr-code')
-                    ->visible(fn ($record) => $record && $record->qr_code)
-                    ->label('Código QR'),
+                    ->visible(fn ($record) => $record && $record->qr_code),
 
             ]);
     }
